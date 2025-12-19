@@ -1,0 +1,208 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f1624, #1d2a44 40%, #15273f);
+    color: #eef2f7;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Header styling */
+.Header {
+    background: linear-gradient(135deg, #0f1624, #1d2a44 45%, #15273f);
+    padding: 26px 30px;
+    color: #f7fbff;
+    width: 100%;
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.28);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.Header h2 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.6px;
+    color: #f7fbff;
+    text-shadow: 0 8px 24px rgba(122, 245, 255, 0.2);
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    align-items: center;
+    position: absolute;
+    right: 26px;
+}
+
+/* Button Styling */
+.btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: #f7fbff;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+    border-color: rgba(122, 245, 255, 0.6);
+}
+
+/* Navigation bar styling */
+nav {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 18px;
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+/* Container styling */
+.container {
+    background: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation items */
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 15px 28px;
+    margin: 6px;
+    font-size: 18px;
+    font-weight: 650;
+    color: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.25s, background-color 0.25s;
+    border-radius: 8px;
+    letter-spacing: 0.2px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Hover Effect */
+nav ul li:hover {
+    color: #0a2540;
+    background-color: #eef6ff;
+}
+
+/* Dropdown Menu Container */
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    z-index: 10;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px);
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu li {
+    padding: 10px 18px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, border-left 0.25s;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.dropdown-menu li:hover {
+    background-color: #eef6ff;
+    color: #0a2540;
+    border-left: 3px solid rgba(122, 245, 255, 0.7);
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-wallet-chip {
+    margin-left: auto;
+    padding: 10px 20px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0f62fe, #7c3aed);
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 12px 30px rgba(15, 98, 254, 0.35);
+    border: 1px solid rgba(255,255,255,0.25);
+    min-width: 180px;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-wallet-chip .chip-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.nav-wallet-chip .chip-amount {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+}

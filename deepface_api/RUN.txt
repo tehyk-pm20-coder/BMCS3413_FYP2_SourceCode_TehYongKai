@@ -1,0 +1,3 @@
+cd C:\deepface_api
+venv\Scripts\activate
+py deepface_api.py

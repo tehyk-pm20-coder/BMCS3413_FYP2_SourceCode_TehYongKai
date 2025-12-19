@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+
+:root {
+    --primary: #0052ff;
+    --primary-dark: #0038b1;
+    --text-dark: #0f172a;
+    --text-muted: #6c7288;
+    --surface: #ffffff;
+    --border: rgba(15, 23, 42, 0.08);
+}
+
+body {
+    min-height: 100vh;
+    background: #050c1f;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(0, 82, 255, 0.25), transparent 40%),
+                radial-gradient(circle at 80% 0%, rgba(0, 229, 255, 0.25), transparent 45%),
+                #020617;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.5;
+}
+
+.orb-large {
+    width: 320px;
+    height: 320px;
+    background: rgba(0, 82, 255, 0.35);
+    top: 5%;
+    right: 18%;
+}
+
+.orb-small {
+    width: 180px;
+    height: 180px;
+    background: rgba(0, 229, 255, 0.35);
+    bottom: 10%;
+    left: 15%;
+}
+
+.login-wrapper {
+    width: min(1100px, 92vw);
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(4, 11, 28, 0.55);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+.info-panel {
+    padding: 60px 55px;
+    background: linear-gradient(135deg, rgba(0, 82, 255, 0.92), rgba(0, 229, 255, 0.85));
+    color: #f8fbff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info-panel h1 {
+    font-size: clamp(32px, 4vw, 42px);
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.info-panel p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(248, 251, 255, 0.9);
+}
+
+.brand-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(248, 251, 255, 0.5);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.brand-pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #04f5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.login-box {
+    padding: 55px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login-box h2 {
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    font-size: 16px;
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.textbox input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 82, 255, 0.12);
+    outline: none;
+}
+
+.button-container {
+    margin-top: 8px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(120deg, var(--primary), var(--primary-dark));
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 82, 255, 0.35);
+}
+
+.signup-link,
+.back-link {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.signup-link a,
+.back-link a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.signup-link a:hover,
+.back-link a:hover {
+    color: var(--primary-dark);
+}
+
+@media (max-width: 900px) {
+    .login-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .info-panel {
+        padding: 45px 35px;
+        text-align: center;
+    }
+
+    .login-box {
+        padding: 45px 35px 50px;
+    }
+}
